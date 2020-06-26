@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: audio-submission
+
+server:
+  port: 8080
+
+com.kanjisoup.audio:
+  queue:
+    exchange: event-audio
+    exchange-type: fanout
+    routing-key: event-audio
+    queue-name: ${com.kanjisoup.audio.queue.routing-key}

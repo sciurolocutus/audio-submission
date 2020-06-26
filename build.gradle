@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                maven(MavenPublication) {
+                    artifact jar
+                    artifactId = project.getName()
+                }
+            }
+        }
+    }
+}
